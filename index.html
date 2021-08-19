@@ -1,0 +1,93 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Learn JS</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+      rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+      crossorigin="anonymous">
+
+  <link href="./styles.css" rel="stylesheet">
+    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+    crossorigin="anonymous">
+  </script>
+
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+  <div id="app" class="container">
+    <header>
+      <h1>Learn JS Exercise Tester</h>
+    </header>
+    <div class="accordion">
+      <div class="card" v-for="module in modules">
+        <accordion-toggle :target="module.id" class="module-title card-header" :class="module.success">
+          {{module.title}}
+        </accordion-toggle>
+        <div :id="module.id" class="collapse">
+          <div class="card-body accordion-body">
+            <div>
+              <b>Readings: </b>
+              <div class="card" v-for="reading in module.readings">
+                <div class="card-body">
+                  <div class="card-title h5">
+                    <a :href="reading.base">{{reading.title}}</a>
+                  </div>
+                  <div class="card-text">
+                    <span v-html="noteLinks(reading)"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="card" v-for="result in module.results">
+                <accordion-toggle :target="result.exercise" 
+                  class="exercise-name card-header" :class="result.success">
+                  {{result.exercise}}
+                </accordion-toggle>
+                <div :id="result.exercise" class="collapse">
+                  <div class="card-body accordion-body">
+                    <p class="card-text">
+                      Define a function <strong>{{result.exercise}}</strong>. 
+                      It should take {{result.data.given}}.
+                      It should return {{result.data.returns}}. {{result.data.note}}
+                    </p>
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>Call</th>
+                          <th>Expected Result</th>
+                          <th v-if="result.success !== 'not-started'">Your Result</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="test-result" :class="result.success" v-for="result in result.results">
+                          <td><code>{{result.call}}</code></td>
+                          <td>{{display(result.expected)}}</td>
+                          <td v-if="result.success !== undefined">{{display(result.result)}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- scripts -->
+  <script src="solutions.js" type="module"></script>
+  <script src="app.js" type="module"></script>
+
+</body>
+</html>
