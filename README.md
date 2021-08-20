@@ -21,7 +21,7 @@ Download this repository. Use the ![](./download-code.png) button to get a Zip a
 the terminal command to create a **learn-js** directory:
 
 ```
-git clone https://gitlab.com/criesbeck/learn-js.git
+git clone https://github.com/criesbeck/learn-js.git
 ```
 
 ## Running in VS Code
