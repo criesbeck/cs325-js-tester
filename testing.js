@@ -35,7 +35,7 @@ const sameType = (x, y) => (
   Array.isArray(x) === Array.isArray(y)
 );
 
-const caseTestResult = (exercise, fn, testCase) => {
+const testCaseResult = (exercise, fn, testCase) => {
   const call = `${exercise}(${argText(testCase.inputs)})`;
   const type = testCase.type || 'text';
   const result = fn && evalTest(fn, testCase.inputs);
@@ -44,32 +44,40 @@ const caseTestResult = (exercise, fn, testCase) => {
   return { call, result, expected, success, type }
 };
 
+const exerciseSummary = (results) => (
+  results.every(result => result.success === undefined) 
+  ? 'not-started'
+  : results.every(result => result.success) 
+  ? 'passed'
+  : 'failed'
+);
+
 const exerciseTestResults = (exercise, data, solutions) => {
   const fn = solutions[exercise];
   const results = data.tests.map(testCase => (
-    caseTestResult(exercise, fn, testCase)
+    testCaseResult(exercise, fn, testCase)
   ));
-  const success = !fn 
-    ? 'not-started'
-    : results.every(result => result.success) 
-    ? 'passed'
-    : 'failed';
+  const success = exerciseSummary(results);
   return {
     exercise, data, results, success
   };
 };
 
+const moduleSummary = (results) => (
+  results.every(result => result.success === 'passed')
+  ? 'passed'
+  : results.some(result => result.success === 'failed')
+  ? 'failed'
+  : results.every(result => result.success === 'not-started')
+  ? 'not-started'
+  : 'mixed'
+);
+
 const moduleTestResults = (module, data, solutions) => {
   const results = Object.entries(data.exercises).map(entry => (
     exerciseTestResults(...entry, solutions)
   ));
-  const success = results.every(result => result.success === 'passed')
-    ? 'passed'
-    : results.every(result => result.success === 'failed')
-    ? 'failed'
-    : results.every(result => result.success === 'not-started')
-    ? 'not-started'
-    : 'mixed';
+  const success = moduleSummary(results);
   return { 
     id: module, ...data, success, results
   };

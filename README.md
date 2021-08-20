@@ -14,70 +14,55 @@ Recommended for editing code:
 * [Visual Studio Code](https://code.visualstudio.com/download) 
 * [Live Server plug-in installed in VS Code](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
-You need to know how to open in a terminal window to run a shell command.
-
-* On a MacIntosh, use the **Terminal** application. [Terminal Beginners Tutorial](https://academind.com/tutorials/terminal-zsh-basics/)
-* On Windows, use the **Git Bash** application. It's installed with Git for Windows. [Command Line Interace Tutorial (with Git Bash)](https://www.youtube.com/watch?v=sw9kdFka8rA)
 
 ## Installing LearnJS
 
-Create a directory where you will keep your code projects. 
-
-Open a terminal commmand window and **cd** to that directory. Enter the following three commands.
+Download this repository, either as a Zip archive, using the ![](./download-code.png) button,
+or the terminal command
 
 ```
 git clone https://gitlab.com/criesbeck/learn-js.git
 ```
 
-The first line downloads the LearnJS code. If you want to use a different name, add
-it to the end of the above command, e.g., 
+## Running in VS Code
 
-```
-git clone https://gitlab.com/criesbeck/learn-js.git exercise-tester
-```
+In VS Code, use **File | Open** to open the *learn-js* directory.
 
-## Running
+[Start the Live Server.](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
-Since the point of this application is to edit and test code, it makes sense to run LearnJS
-inside an editor that supports that, like VS Code.
-
-If you have VS Code installed, start it. Use **File | Open** to open the *learn-js* directory.
-
-Open the **index.html** file. If the Go Live button does not appear at the bottom of the screen,
-type control-shift-P (Windows, Linux) / command-shift-P (MacOS), type "Live Server", and select it
-to activate it.
-
-The LearnJS Exercise Tester page should open on http://localhost:5500. It should look the same
-as [this page](https://criesbeck.github.io/learn-js/).
+The LearnJS Exercise Tester page should open on http://localhost:5500. It should look like [this](https://criesbeck.github.io/learn-js/).
 
 ## The LearnJS interface
 
-The LearnJS Exercise Tester page shows a list of JavaScript exercise modules.
-Each module contains exercises to do.
+The LearnJS Exercise Tester page displays a list of JavaScript exercise modules.
 
-The color of the module name indicates the status of the exercises in it:
+The color of each module indicates the status of the exercises in it:
 
-* <span style="color:red">red</span> means one or more exercises in the block have failing test cases.
-* <span style="color:green">green</span> means all the exercises in the block are done.
-* <span style="color:orange">orange</span> means some of the exercises in block are done.
-* <span style="color:gray">gray</span> means none of the exercises in the block have been started.
+* <span style="color:gray">gray</span> means none of the exercises in the block have been started
+* <span style="color:red">red</span> means one or more exercises in the block have failing test cases
+* <span style="color:orange">orange</span> means some of the exercises in block are done
+* <span style="color:green">green</span> means all the exercises in the block are done
 
-Click on a module name to see the exercises it contains, and links to relevant
-materials to read.
+Click on a module to see the exercises in it, along with a few background links on relevant
+materials. The exercises are also color coded:
 
-Click on an exercise to see a description of what it's supposed to do, and 
+* <span style="color:gray">gray</span> means the exercise has not been started
+* <span style="color:red">red</span> means one or more test cases fail
+* <span style="color:green">green</span> means all the test cases pass
+
+Click on a specific exercise to see what you need to write, and 
 the test cases that your solution has to pass.
 
-Out of the box, the first module will be in <span style="color:red">red</span>. That
-means one or more of its exercises have tests that fail.
+Out of the box, the solution to the first exercise in the first module is broken. That's why the
+first module is <span style="color:red">red</span>. 
 
 Click on the first module to open it up. That will show that the **rectPerimeter** exercise is
 <span style="color:red">red</span>. That is the exercise that has a broken solution.
 
-Click on **rectPerimeter** to see a description of the exercise. Every exercise asks
-you to define a function. The exercise gives a brief
-description of the function to be defined -- what it is passed and what it returns --
-and a table of test cases. Each test case has:
+Click on **rectPerimeter** to see details. Every exercise asks
+you to define a function. The exercise describes what arguments the function takes, 
+what the function returns, and what test cases have to be passed. 
+Each test case has:
 
 * a call to the function
 * the value that should be returned by the function call
@@ -86,8 +71,7 @@ and a table of test cases. Each test case has:
 In this case, **rectPerimeter(x, y)** is supposed to take the dimensions of a rectangle and return
 the perimeter, but the current solution is returning a number that is too small in both cases. 
 
-## Editing solutions
-
+## Solving an exercise
 
 To see how **rectPerimeter** is currently defined, open the file **solutions.js** in
 your text editor. The initial definition there is
