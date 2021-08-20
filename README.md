@@ -17,8 +17,8 @@ Recommended for editing code:
 
 ## Installing LearnJS
 
-Download this repository, either as a Zip archive, using the ![](./download-code.png) button,
-or the terminal command
+Download this repository. Use the ![](./download-code.png) button to get a Zip archive or
+the terminal command to create a **learn-js** directory:
 
 ```
 git clone https://gitlab.com/criesbeck/learn-js.git
@@ -26,16 +26,15 @@ git clone https://gitlab.com/criesbeck/learn-js.git
 
 ## Running in VS Code
 
-In VS Code, use **File | Open** to open the *learn-js* directory.
+In VS Code, use **File | Open** to open the **learn-js** directory.
 
-[Start the Live Server.](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+Start [Live Server.](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
 The LearnJS Exercise Tester page should open on http://localhost:5500. It should look like [this](https://criesbeck.github.io/learn-js/).
 
 ## The LearnJS interface
 
-The LearnJS Exercise Tester page displays a list of JavaScript exercise modules.
-
+The LearnJS Exercise Tester page displays a list of JavaScript exercise modules. 
 The color of each module indicates the status of the exercises in it:
 
 * <span style="color:gray">gray</span> means none of the exercises in the block have been started
