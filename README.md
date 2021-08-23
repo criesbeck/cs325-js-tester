@@ -102,19 +102,21 @@ exported for the tester to see them. See the definition of **rectPerimeter** for
 
 Feel free to define helper functions, but don't export them.
 
-Write modern code. Use arrow syntax to define functions.
+Use modern JavaScript features.
 
 Write clean code. Unless required by the exercise, solutions should not
 
 * destructively modify input objects
 * print anything
 
-
 ## Resources
 
 [Hello, JavaScript!](https://courses.cs.northwestern.edu/394/guides/intro-js.php) is
 the primary resource for these exercises. It covers just the parts you need to know for 
 the exercises and to get started with React programming.
+
+[Modern JS Features](https://developer.mozilla.org/en-US/docs/MDN/Guidelines/Code_guidelines/JavaScript#use_modern_js_features)
+gives a quick list of what "modern JavaScript features" normally means.
 
 For a longer introduction to JavaScript, see  [The Modern JavaScript Tutorial](https://javascript.info/). Note that to be complete it covers many features in JavaScript that are no longer 
 recommended practice. 
