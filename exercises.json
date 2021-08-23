@@ -260,7 +260,7 @@
         "id": "intro-js",
         "title": "Hello, JavaScript!",
         "base": "https://courses.cs.northwestern.edu/394/guides/intro-js.php",
-        "notes": "Read from the [Arrays](#arrays) through [Function blocks](#function-blocks)"
+        "notes": "Read from the [Arrays](#arrays) through [Composition by chaining](#chaining)"
       }
     ],
     "exercises": {
