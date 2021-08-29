@@ -1,96 +1,91 @@
-# LearnJS Exercise Tester
+# CS325 JavaScript Exercise Tester
 
-**LearnJS** is a web application for JavaScript exercises with test cases, written with Vue. Download
+This is a web application for JavaScript exercises with test cases. Download
 and serve this application locally to see the exercises, write solutions, and test them.
 
 ## Requirements
 
-You need up-to-date versions of the following installed:
-
-* [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-
-Recommended for editing code:
+Recommended for editing and running the code:
 
 * [Visual Studio Code](https://code.visualstudio.com/download) 
 * [Live Server plug-in installed in VS Code](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
 
-## Installing LearnJS
+## Installation
 
 Download this repository. Use the ![](./download-code.png) button to get a Zip archive or
-the terminal command to create a **learn-js** directory:
+use the following terminal command to create a local copy:
 
 ```
-git clone https://github.com/criesbeck/learn-js.git
+git clone https://github.com/criesbeck/cs325-js-tester.git
 ```
 
 ## Running in VS Code
 
-In VS Code, use **File | Open** to open the **learn-js** directory.
+In VS Code, use **File | Open** to open the entire downloaded directory (not a specific file).
 
-Start [Live Server.](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+Start [Live Server.](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to serve
+**index.html**.
 
-The LearnJS Exercise Tester page should open on http://localhost:5500. It should look like [this](https://criesbeck.github.io/learn-js/).
+The exercise tester page should open on http://localhost:5500 or whatever port your local server
+is using. It should look like [this](https://criesbeck.github.io/cs325-js-tester/).
 
-## The LearnJS interface
+## The interface
 
-The LearnJS Exercise Tester page displays a list of JavaScript exercise modules. 
-The color of each module indicates the status of the exercises in it:
+The tester page displays a list of JavaScript exercise modules and which ones you've completed.
+The color of each module indicates its status:
 
-* <span style="color:gray">gray</span> means none of the exercises in the block have been started
-* <span style="color:red">red</span> means one or more exercises in the block have failing test cases
-* <span style="color:orange">orange</span> means some of the exercises in block are done
-* <span style="color:green">green</span> means all the exercises in the block are done
+* <span style="color:gray">gray</span> means none of the exercises in the module have been started
+* <span style="color:red">red</span> means one or more exercises in the module have failing test cases
+* <span style="color:orange">orange</span> means some of the exercises in module are done
+* <span style="color:green">green</span> means all the exercises in the module are done
 
-Click on a module to see the exercises in it, along with a few background links on relevant
-materials. The exercises are also color coded:
+Click on a module to see the exercises in it. The exercises are also color coded:
 
 * <span style="color:gray">gray</span> means the exercise has not been started
-* <span style="color:red">red</span> means one or more test cases fail
-* <span style="color:green">green</span> means all the test cases pass
+* <span style="color:red">red</span> means one or more test cases are failing
+* <span style="color:green">green</span> means all the test cases are passing
 
-Click on a specific exercise to see what you need to write, and 
-the test cases that your solution has to pass.
+Click on a specific exercise to see the requirements and test cases.
 
-Out of the box, the solution to the first exercise in the first module is broken. That's why the
-first module is <span style="color:red">red</span>. 
+## Viewing results
 
-Click on the first module to open it up. That will show that the **rectPerimeter** exercise is
-<span style="color:red">red</span>. That is the exercise that has a broken solution.
+For demonstration purposes, the repository comes with a broken solution to the first exercise in the first module. That's why that module is <span style="color:red">red</span>. 
 
-Click on **rectPerimeter** to see details. Every exercise asks
-you to define a function. The exercise describes what arguments the function takes, 
+Click on the first module to open it up. That will show that the first exercise is also
+<span style="color:red">red</span>. It has a broken solution.
+
+Click on the first exercise to see what function has to be defined, 
+what arguments the function takes, 
 what the function returns, and what test cases have to be passed. 
+
 Each test case has:
 
 * a call to the function
 * the value that should be returned by the function call
 * the value that the current solution returns, if a solution has been defined
 
-In this case, **rectPerimeter(x, y)** is supposed to take the dimensions of a rectangle and return
-the perimeter, but the current solution is returning a number that is too small in both cases. 
+In this case, all of the test results are <span style="color:red">red</span>
+because all of the tests fail.
 
-## Solving an exercise
+## Fixing a solution
 
-To see how **rectPerimeter** is currently defined, open the file **solutions.js** in
-your text editor. The initial definition there is
+All exercise solutions are in the file **solutions.js**. Open that file. 
 
-```
-export const rectPerimeter = (x, y) => x + y;
-```
-
-If you want to know what this does, see the
-[resources](#resources) for introductions to JavaScript.
-
-This definition of **rectPerimeter** fails because it just adds the two sides, **x** and **y**. 
-To get the perimeter, it needs to return twice that amount. Edit the definition to be
+Out of the box, there is one function exported. 
 
 ```
-export const rectPerimeter = (x, y) => 2 * (x + y);
+export const sumOfSquares = (x, y) => x + y;
+```
+
+Edit that definition to be
+
+```
+export const sumOfSquares = (x, y) => x * x + y * y;
 ```
 
 Save the file and go back to the web page again. **Live Server** should have updated the page automatically. 
-The **rectPerimeter** test cases should now all be green.
+The test cases should now all be green.
 
 The module name should now be <span style="color:orange">orange</span>. That means it has no failing cases, 
 but it does have exercises with no solutions.
@@ -98,7 +93,7 @@ but it does have exercises with no solutions.
 ## Exercise guidelines
 
 Solutions are functions. They must be defined in **solutions.js** and
-exported for the tester to see them. See the definition of **rectPerimeter** for an example.
+exported for the tester to see them.
 
 Feel free to define helper functions, but don't export them.
 

@@ -1,0 +1,78 @@
+{
+  "ddr-unify": {
+    "title": "DDR Unify",
+    "exercises": {
+      "unify": {
+          "arguments": "two forms",
+          "returns": "list of binding lists",
+          "tests": [
+          {
+            "inputs": ["a", "a"],
+            "output": [{}]
+          },
+          {
+            "inputs": ["a", "b"],
+            "output": []
+          },
+          {
+            "inputs": ["?x", "a"],
+            "output": [{"?x": "a"}]
+          },
+          {
+            "inputs": ["a", "?x"],
+            "output": [{"?x": "a"}]
+          },
+          {
+            "inputs": [["?x", "?x"], ["a", "a"]],
+            "output": [{"?x": "a"}]
+          },
+          {
+            "inputs": [["?x", "?x"], ["a", "b"]],
+            "output": []
+          },
+          {
+            "inputs": ["?x", ["a"]],
+            "output": [{"?x": ["a"]}]
+          },
+          {
+            "inputs": ["?x", ["?x"]],
+            "output": []
+          },
+          {
+            "inputs": ["?x", ["?y"]],
+            "output": [{"?x": ["?y"]}]
+          },
+          {
+            "inputs": ["?x", {"f": ["?y"]}],
+            "output": [{"?x": {"f": ["?y"]}}]
+          },
+          {
+            "inputs": [["?x", "?y"], ["?y", {"f": ["?y"]}]],
+            "output": []
+          },
+          {
+            "inputs": [["?x", "?y"], [{"f": ["?y"]}, "?y"]],
+            "output": [{"?x": {"f": ["?y"]}}]
+          }
+        ]
+      }
+    }
+  },
+  "ddr-backchain": {
+    "title": "DDR backchain",
+    "exercises": {
+      "ask": {
+        "arguments": "a form and a list of rules",
+        "returns": "a list of instances of form implied by the rules",
+        "tests": [
+          {
+            "inputs": [
+              {"canMove": ["block1"]},
+              [{ "consequent": { "canMove": ["block1"] }}]
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

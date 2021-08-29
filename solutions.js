@@ -1,1 +1,1 @@
-export const rectPerimeter = (x, y) => x + y;
+export const sumOfSquares = (x, y) => x + y;

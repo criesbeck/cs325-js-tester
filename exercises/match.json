@@ -1,0 +1,365 @@
+{
+  "match-primitives": {
+    "title": "Match primitives",
+    "exercises": {
+      "match": {
+        "given": "two primitive values, pat and obj",
+        "returns": "success if pat and obj are equal",
+        "tests": [
+          {
+              "inputs": [ 1, 1 ],
+              "output": [{}]
+          },
+          {
+              "inputs": [ 3, 1 ],
+              "output": []
+          },
+          {
+              "inputs": [ "abc", "abc" ],
+              "output": [{}]
+          },
+          {
+              "inputs": [ "abc", "ABC" ],
+              "output": []
+          },
+          {
+              "inputs": [ "10", 10 ],
+              "output": []                    
+          },
+          {
+              "inputs": [ true, true ],
+              "output": [{}]
+          },
+          {
+              "inputs": [ false, true ],
+              "output": []
+          },
+          {
+              "inputs": [ null, false ],
+              "output": []
+          },
+          {
+              "inputs": [ null, null ],
+              "output": [{}]
+          }
+        ]
+      }
+    }
+  },
+  "match-arrays": {
+    "title": "Match Arrays",
+    "exercises": {
+      "match": {
+        "given": "two arrays, pat and obj",
+        "returns": "success if the i'th element of pat matches the i'th element of obj",
+        "tests": [
+          {
+              "inputs": [ [], [] ],
+              "output": [{}]
+          },
+          {
+              "inputs": [ [ 1 ], [ 1 ] ],
+              "output": [{}]
+          },
+          {
+              "inputs": [ [ 1 ], [ 2 ] ],
+              "output": []
+          },
+          {
+              "inputs": [ [ 1 ], [ 1, 2 ] ],
+              "output": [{}]
+          },
+          {
+              "inputs": [ [ 2 ], [ 1, 2 ] ],
+              "output": []
+          },
+          {
+              "inputs": [ [ 1, 2 ], [ 1 ] ],
+              "output": []
+          },
+          {
+              "inputs": [ 
+                  [ [ 1, 2 ], [ 3, 4 ] ],
+                  [ [ 1, 2 ], [ 3, 4 ] ]
+              ],
+              "output": [{}]
+          },
+          {
+              "inputs": [
+                  [ [ 1, 2 ], [ 3 ] ],
+                  [ [ 1, 2 ], [ 3, 4 ] ]
+              ],
+              "output": [{}]
+          },
+          {
+              "inputs": [
+                  [ [ 1, 2 ], [ 4 ] ],
+                  [ [ 1, 2 ], [ 3, 4 ] ]
+              ],
+              "output": []
+          },
+          {
+              "inputs": [
+                  [ [ 1, 2 ], [ 3, 4 ] ],
+                  [ [ 1, 2 ], [ 3 ] ]
+              ],
+              "output": []
+          }
+        ]
+      }
+    }
+  },
+  "match-objects": {
+    "title": "Match Objects",
+    "exercises": {
+      "match": {
+        "given": "two objects, pat and obj",
+        "returns": "success if the value of every key in pat has a matching value for that key in obj",
+        "tests": [
+          {
+              "inputs": [ {}, {} ],
+              "output": [{}]
+          },
+          {
+              "inputs": [ {}, [] ],
+              "output": []
+          },
+          {
+              "inputs": [ [], {} ],
+              "output": []
+          },
+          {
+              "inputs": [
+                  { "a": 1, "b": 2 },
+                  { "b": 2, "a": 1 }
+              ],
+              "output": [{}]
+          },
+          {
+              "inputs": [
+                  { "a": 1, "b": 2 },
+                  { "a": 1 }
+              ],
+              "output": []
+          },
+          {
+              "inputs": [
+                  { "a": 1 },
+                  { "a": 1, "b": 2 }
+              ],
+              "output": [{}]
+          },
+          {
+              "inputs": [
+                  { "a": 1, "b": 2 },
+                  { "a": 1, "b": 1 }
+              ],
+              "output": []
+          },
+          {
+              "inputs": [
+                  { "a": 1, "b": 2 },
+                  { "a": 1, "c": 1 }
+              ],
+              "output": []
+          },
+          {
+              "inputs": [
+                  { "a": [ 1, 2 ], "b": 2 },
+                  { "b": 2, "a": [ 1, 2 ] }
+              ],
+              "output": [{}]
+          },
+          {
+              "inputs": [
+                  { "a": { "c": 1, "d": 3 }, "b": 2 },
+                  { "b": 2, "a": { "d": 3, "c": 1 } }
+              ],
+              "output": [{}]
+          }
+        ]
+      }
+    }
+  },
+  "match-variables": {
+    "title": "Match Variables",
+    "exercises": {
+      "match": {
+        "given": "pattern pat, with zero or more variables (strings starting with ?), and object obj",
+        "returns": "the lists of bindings lists for the variables that make pat match obj",
+        "tests": [
+          {
+            "inputs": [ "?x", 1 ],
+            "output": [ { "?x": 1 } ]
+          },
+          {
+            "inputs": [ [1, "?x", 3], [1, 2, 3] ],
+            "output": [ { "?x": 2 } ]
+          },
+          {
+            "inputs": [ ["?x", 2, "?x"], [1, 2, 3] ],
+            "output": []
+          },
+          {
+            "inputs": [ ["?x", 2, "?x"], [1, 2, 1] ],
+            "output": [ { "?x": 1 } ]
+          },
+          {
+            "inputs": [ 
+                { "a": 1, "b": "?x"},
+                { "b": 2, "a": 1 }
+            ],
+            "output": [ { "?x": 2 } ]
+          },
+          {
+            "inputs": [ 
+                { "a": "?x", "b": "?x"},
+                { "b": 1, "a": 1 }
+            ],
+            "output": [ { "?x": 1 } ]
+          },
+          {
+            "inputs": [ 
+                { "a": "?x", "b": "?x"},
+                { "b": 2, "a": 1 }
+            ],
+            "output": []
+          },
+          {
+            "inputs": [ 
+                { "a": "?x", "b": "?x"},
+                { "b": [1, 2], "a": [1, 2] }
+            ],
+            "output": [
+                { "?x": [1, 2] }
+            ]
+          },
+          {
+            "inputs": [ 
+                ["?x", "?y", "?x"],
+                [1, 2, 1]
+            ],
+            "output": [
+                { "?x": 1, "?y": 2 }
+            ]
+          },
+          {
+            "inputs": [ 
+                ["?x", "?y", "?x"],
+                [1, 2, 2]
+            ],
+            "output": []
+          },
+          {
+            "inputs": [
+                [[["?x", "?y"]], [["?y", "?x"]]],
+                [[[1, 2]], [[2, 1]]]
+            ],
+            "output": [
+                { "?x": 1, "?y": 2 }
+            ]
+          },
+          {
+            "inputs": [
+                [[["?x", "?y"]], [["?y", "?x"]]],
+                [[[1, 2]], [[1, 2]]]
+            ],
+            "output": []
+          },
+          {
+            "inputs": [
+                ["?x", "?x"],
+                [[1, 2], [1, 2]]
+            ],
+            "output": [
+                { "?x": [1, 2] }
+            ]
+          },
+          {
+            "inputs": [
+                ["?x", "?x"],
+                [[1], [1, 2]]
+            ],
+            "output": []
+          },
+          {
+            "inputs": [
+                ["?x", "?x"],
+                [[1, 2], [1]]
+            ],
+            "output": []
+          }
+        ]
+      }
+    }
+  },
+  "match-regexp": {
+    "title": "Match Regular Expressions",
+    "exercises": {
+      "match": {
+        "given": "{regexp: regular-expression, pats: [zero or more pattern variables]}, and an object",
+        "returns": "list of the binding lists for the pattern variables bound to the parts returned by the regular expression groups, if any",
+        "tests": [
+          {
+            "inputs": [ 
+                { "regexp": "(.*), (.*)", "pats": ["?last", "?first"] },
+                "Smith, John"
+              ],
+            "output": [ { "?last": "Smith", "?first": "John" } ]
+          },
+          {
+            "inputs": [ 
+                { "regexp": "(.*), (.*)", "pats": ["?last", "?first"] },
+                "John Smith"
+              ],
+            "output": []
+          },
+          {
+            "inputs": [ 
+                { "regexp": "(.*), (.*)", "pats": ["?last", "?first"] },
+                "Smith, John",
+                [{ "?last": "Smith" }]
+              ],
+            "output": [ { "?last": "Smith", "?first": "John" } ]
+          },
+          {
+            "inputs": [ 
+                { "regexp": "(.*), (.*)", "pats": ["?last", "?first"] },
+                "Smith, John",
+                [{ "?last": "Jones" }]
+              ],
+            "output": [ ]
+          },
+          {
+            "inputs": [ 
+                { "regexp": "(.*): expects", "pats": ["?x"] },
+                "sum: expects a number, got <image>"
+              ],
+            "output": [ { "?x": "sum" }  ]
+          },
+          {
+            "inputs": [ 
+                { "regexp": "(.*): expects" },
+                "sum: expects a number, got <image>"
+              ],
+            "output": [ { }  ]
+          },
+          {
+            "inputs": [ 
+                { "regexp": ".*: expects" },
+                "sum: expects a number, got <image>"
+              ],
+            "output": [ { }  ]
+          },
+          {
+            "inputs": [ 
+                { "regexp": "(.*): expects (.*), got (.*)", "pats": ["?x", "?y", "?z"] },
+                "sum: expects a number, got <image>"
+              ],
+            "output": [ { "?x": "sum", "?y": "a number", "?z": "<image>" } ]
+          }
+        ]
+      }
+    }
+  }
+}

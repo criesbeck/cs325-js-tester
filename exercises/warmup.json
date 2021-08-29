@@ -1,0 +1,183 @@
+{
+    "warmup-conditionals": {
+        "title": "Warmup Basics",
+        "exercises": {
+            "sumOfSquares": {
+                "given": "two numbers",
+                "returns": "the sum of the squares of the two numbers",
+                "tests": [
+                    {
+                        "inputs": [
+                            3,
+                            4
+                        ],
+                        "output": 25
+                    },
+                    {
+                        "inputs": [
+                            1,
+                            2
+                        ],
+                        "output": 5
+                    },
+                    {
+                        "inputs": [
+                            -3,
+                            -4
+                        ],
+                        "output": 25
+                    }
+                ]
+            },
+            "maxOfThree": {
+                "given": "three arguments",
+                "returns": "the largest of the arguments",
+                "tests": [
+                    {
+                        "inputs": [
+                            3,
+                            1,
+                            5
+                        ],
+                        "output": 5
+                    },
+                    {
+                        "inputs": [
+                            1,
+                            3,
+                            5
+                        ],
+                        "output": 5
+                    },
+                    {
+                        "inputs": [
+                            1,
+                            5,
+                            3
+                        ],
+                        "output": 5
+                    },
+                    {
+                        "inputs": [
+                            3,
+                            5,
+                            1
+                        ],
+                        "output": 5
+                    },
+                    {
+                        "inputs": [
+                            5,
+                            1,
+                            3
+                        ],
+                        "output": 5
+                    },
+                    {
+                        "inputs": [ 5, 3,
+                            1
+                        ],
+                        "output": 5
+                    },
+                    {
+                        "inputs": [ 3, 3, 3 ],
+                        "output": 3
+                    },
+                    {
+                        "inputs": [  -1, -3, -5 ],
+                        "output": -1
+                    }
+                ]
+            },
+            "isLeapYear": {
+                "given": "an integer",
+                "returns": "true if the integer is a leap year</a>",
+                "links": [
+                    {
+                        "text": "Leap year rules",
+                        "href": "http://www.wwu.edu/skywise/leapyear.html"
+                    }
+                ],
+                "tests": [
+                    {
+                        "inputs": [ 2004 ],
+                        "output": true
+                    },
+                    {
+                        "inputs": [ 2001 ],
+                        "output": false
+                    },
+                    {
+                        "inputs": [ 2000 ],
+                        "output": true
+                    },
+                    {
+                        "inputs": [ 1900],
+                        "output": false
+                    }
+                ]
+            }
+        }
+    },
+    "warmup-loops": {
+        "title": "Warmup loops",
+        "exercises": {
+            "allEvens": {
+                "given": "an array of integers",
+                "returns": "an array of just the even integers",
+                "tests": [
+                    {
+                        "inputs": [ [0, 7, 2, 3, 2, 4, 9] ],
+                        "output": [0, 2, 2, 4]
+                    },
+                    {
+                        "inputs": [ [] ],
+                        "output": []
+                    }
+                ]
+            },
+            "listSquares": {
+                "given": "an array of numbers",
+                "returns": "an array of the squares of those numbers",
+                "tests": [
+                    {
+                        "inputs": [ [0, 7, 2, 3, 4, 9] ],
+                        "output": [0, 49, 4, 9, 16, 81]
+                    },
+                    {
+                        "inputs": [[]],
+                        "output": []
+                    }
+                ]
+            },
+            "listSum": {
+                "given": "an array of numbers",
+                "returns": "the sum of the numbers",
+                "tests": [
+                    {
+                        "inputs": [ [0, 7, 2, 3, 4, 9] ],
+                        "output": 25
+                    },
+                    {
+                        "inputs": [ [] ],
+                        "output": 0
+                    }
+                ]
+            },
+            "listSquaresSum": {
+                "given": "an array of numbers",
+                "returns": "the sum of the numbers squared",
+                "tests": [
+                    {
+                        "inputs": [ [0, 7, 2, 3, 4, 9] ],
+                        "output": 159
+                    },
+                    {
+                        "inputs": [ [] ],
+                        "output": 0
+                    }
+                ]
+            }
+        }
+    }
+}

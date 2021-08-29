@@ -1,0 +1,169 @@
+{
+    "basic": {
+        "title": "Basic Exercises",
+        "exercises": {
+            "backSlice": {
+                "arguments": "an array A and two integers, m and n",
+                "returns": "the array of elements in A, from A[m] to A[n-1], if m < n, or A[m] to A[n+1], if n < m",
+                "tests": [
+                    {
+                        "inputs": [
+                            ["a", "b", "c", "d", "e"],
+                            1,
+                            3
+                        ],
+                        "output": ["b", "c"]
+                    },
+                    {
+                        "inputs": [
+                            ["a", "b", "c", "d", "e"],
+                            3,
+                            1
+                        ],
+                        "output": ["d", "c"]
+                    },
+                    {
+                        "inputs": [
+                            ["a", "b", "c", "d", "e"],
+                            3,
+                            2
+                        ],
+                        "output": ["d"]
+                    },
+                    {
+                        "inputs": [
+                            ["a", "b", "c", "d", "e"],
+                            3,
+                            3
+                        ],
+                        "output": []
+                    }
+                ]
+            },
+            "subArray": {
+                "arguments": "two arrays, arr and indices, where indices is an array of integers",
+                "returns": "the array of elements in arr at the given indices",
+                "tests": [
+                    {
+                        "inputs": [
+                            ["a", "b", "c", "d", "e"],
+                            [3, 1]
+                        ],
+                        "output": ["d", "b"]
+                    },
+                    {
+                        "inputs": [
+                            ["a", "b", "c", "d", "e"],
+                            []
+                        ],
+                        "output": []
+                    },
+                    {
+                        "inputs": [
+                            ["a", "b", "c", "d", "e"],
+                            [0, 0]
+                        ],
+                        "output": ["a", "a"]
+                    }
+                ]
+            },
+            "getRepeats": {
+                "arguments": "an array",
+                "returns": "an array of the first occurrence of each repeating item",
+                "tests": [
+                    {
+                        "inputs": [
+                            [1, 2, 2, 3, 4, 5, 3, 1]
+                        ],
+                        "output": [1, 2, 3]
+                    },
+                    {
+                        "inputs": [
+                            [3, 7, 11, 13, 17]
+                        ],
+                        "output": []
+                    },
+                    {
+                        "inputs": [
+                            [6, 67, -6, 23, 6, 3, 11, 100, 23, 6, 0, 3]
+                        ],
+                        "output": [6, 23, 3]
+                    },
+                    {
+                        "inputs": [
+                            []
+                        ],
+                        "output": []
+                    }
+                ]
+            },
+            "over21": {
+                "arguments": "an array of \"person\" objects, each with a name and age keys",
+                "returns": "an array of the people 21 or older",
+                "tests": [
+                    {
+                        "inputs": [
+                            [
+                                {
+                                    "name": "John",
+                                    "age": 12
+                                },
+                                {
+                                    "name": "Annie",
+                                    "age": 41
+                                },
+                                {
+                                    "age": 21,
+                                    "name": "Mary"
+                                }
+                            ]
+                        ],
+                        "output": [
+                            {
+                                "name": "Annie",
+                                "age": 41
+                            },
+                            {
+                                "age": 21,
+                                "name": "Mary"
+                            }
+                        ]
+                    },
+                    {
+                        "inputs": [
+                            [
+                                {
+                                    "name": "John",
+                                    "age": 12
+                                },
+                                {
+                                    "age": 19,
+                                    "name": "Glenda"
+                                }
+                            ]
+                        ],
+                        "output": []
+                    }
+                ]
+            },
+            "makeHtmlList": {
+                "arguments": "an array of strings",
+                "returns": "a string with an HTML list of those strings",
+                "tests": [
+                    {
+                        "inputs": [
+                            ["Mercury", "Venus", "Earth"]
+                        ],
+                        "output": "<ul><li>Mercury</li><li>Venus</li><li>Earth</li></ul>"
+                    },
+                    {
+                        "inputs": [
+                            []
+                        ],
+                        "output": ""
+                    }
+                ]
+            }
+        }
+    }
+}

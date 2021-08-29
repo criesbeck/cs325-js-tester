@@ -10,11 +10,12 @@ const app = Vue.createApp({
     }
   },
   mounted() {
-    fetchJson('./exercises.json')
+    fetchJsonList(['warmup', 'basic', 'match', 'ddr'])
     .then(json => {
       this.exercises = json;
-      this.modules = testSolutions(json, solutions);
-      console.log(this.modules);
+      const foo = testSolutions(json, solutions);
+      console.log(foo)
+      this.modules = foo
     })
     .catch(error => alert(error))
   },
@@ -31,9 +32,29 @@ const app = Vue.createApp({
     },
     noteLinks (reading) {
       return replaceLinks(reading.base, reading.notes);
+    },
+    resultSuccess (result) {
+      return result.success ? 'passed' : 'failed';
     }
   }
 });
+
+const fetchJsonList = async (modules) => {
+  try {
+    const urls = modules.map(module => `./exercises/${module}.json`);
+    const results = await Promise.allSettled(urls.map(fetchJson));
+    console.log(results.filter(result => result.status !== 'fulfilled'));
+    return results.reduce((obj, result, i) => (
+      result.status !== 'fulfilled'
+      ? obj
+      : { ...obj, ...result.value }
+    ), {}
+    );
+  } catch (error) {
+    alert(error);
+    return null;
+  }
+};
 
 const fetchJson = async (url) => {
   try {
