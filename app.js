@@ -13,9 +13,7 @@ const app = Vue.createApp({
     fetchJsonList(['warmup', 'basic', 'match', 'ddr'])
     .then(json => {
       this.exercises = json;
-      const foo = testSolutions(json, solutions);
-      console.log(foo)
-      this.modules = foo
+      this.modules = testSolutions(json, solutions);
     })
     .catch(error => alert(error))
   },
@@ -23,7 +21,6 @@ const app = Vue.createApp({
     if (!this.tested) {
       this.tested = true;
       this.modules = testSolutions(this.exercises, solutions);
-      console.log(this.modules);
     }
   },
   methods: {
@@ -43,15 +40,13 @@ const fetchJsonList = async (modules) => {
   try {
     const urls = modules.map(module => `./exercises/${module}.json`);
     const results = await Promise.allSettled(urls.map(fetchJson));
-    console.log(results.filter(result => result.status !== 'fulfilled'));
-    return results.reduce((obj, result, i) => (
+    return results.reduce((obj, result) => (
       result.status !== 'fulfilled'
       ? obj
       : { ...obj, ...result.value }
     ), {}
     );
   } catch (error) {
-    alert(error);
     return null;
   }
 };
@@ -65,7 +60,6 @@ const fetchJson = async (url) => {
     
     return await response.json();
   } catch (error) {
-    alert(error);
     return null;
   }
 };
