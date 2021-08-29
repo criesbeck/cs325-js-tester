@@ -95,6 +95,22 @@ The test cases should now all be green.
 The module name should now be <span style="color:orange">orange</span>. That means it has no failing cases, 
 but it does have exercises with no solutions.
 
+## Overview of the modules
+
+Here are the current test modules.
+
+**Warmup**: As suggested, these are warmup exercises, to get you used to the testing interface. Do not 
+submit these for code review. 
+
+**Basic**:  One step above the warmup exercises, these emphasize looping, to get you
+used to modern JavaScript iteration
+with **map**, **filter**, and such, rather than **for** or **while**.
+
+**Match**: A sequence of increasingly challenging modules 
+that incrementally develops a recursive object pattern matcher.
+
+**DDR**: Exercises on unification and deductive retrieval.
+
 ## Exercise guidelines
 
 Solutions are functions. They must be defined in **solutions.js** and
