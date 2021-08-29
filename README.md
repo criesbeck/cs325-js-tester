@@ -1,7 +1,12 @@
 # CS325 JavaScript Exercise Tester
 
-This is a web application for JavaScript exercises with test cases. Download
-and serve this application locally to see the exercises, write solutions, and test them.
+This is a web application for JavaScript exercises with test cases. These
+particular exercises are designed for students in 
+[CS325 Introduction to AI Programming](https://courses.cs.northwestern.edu/325/).
+
+For a more generic set of exercises, see [this repo](https://github.com/criesbeck/learn-js).
+
+Download and serve this application locally to see the exercises, write solutions, and test them.
 
 ## Requirements
 
@@ -97,7 +102,7 @@ exported for the tester to see them.
 
 Feel free to define helper functions, but don't export them.
 
-Use modern JavaScript features.
+Use [modern JavaScript features](https://developer.mozilla.org/en-US/docs/MDN/Guidelines/Code_guidelines/JavaScript#use_modern_js_features).
 
 Write clean code. Unless required by the exercise, solutions should not
 
@@ -109,9 +114,6 @@ Write clean code. Unless required by the exercise, solutions should not
 [Hello, JavaScript!](https://courses.cs.northwestern.edu/394/guides/intro-js.php) is
 the primary resource for these exercises. It covers just the parts you need to know for 
 the exercises and to get started with React programming.
-
-[Modern JS Features](https://developer.mozilla.org/en-US/docs/MDN/Guidelines/Code_guidelines/JavaScript#use_modern_js_features)
-gives a quick list of what "modern JavaScript features" normally means.
 
 For a longer introduction to JavaScript, see  [The Modern JavaScript Tutorial](https://javascript.info/). Note that to be complete it covers many features in JavaScript that are no longer 
 recommended practice. 
