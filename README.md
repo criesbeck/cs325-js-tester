@@ -125,6 +125,22 @@ Write clean code. Unless required by the exercise, solutions should not
 * destructively modify input objects
 * print anything
 
+## Modularization
+
+You can put your solutions in separate files, such as
+
+* **solutions/warmup.js**
+* **solutions/basic.js**
+* **solutions/match.js**
+
+In **solutions.js** put
+
+```
+export * from '/solutions/warmup.js';
+export * from '/solutions/basic.js';
+export * from '/solutions/match.js';
+```
+
 ## Resources
 
 [Hello, JavaScript!](https://courses.cs.northwestern.edu/394/guides/intro-js.php) is
