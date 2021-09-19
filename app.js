@@ -1,7 +1,7 @@
 import { resultText, testSolutions } from "./testing.js";
 import * as solutions from './solutions.js';
 
-const modules  = ['warmup', 'basic', 'match', 'ddr'];
+const modules  = ['warmup', 'mapping', 'match', 'ddr'];
 
 const app = Vue.createApp({
   data() {

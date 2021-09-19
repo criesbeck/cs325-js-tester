@@ -1,6 +1,6 @@
 {
     "warmup-conditionals": {
-        "title": "Warmup Basics",
+        "title": "Conditionals",
         "exercises": {
             "sumOfSquares": {
                 "given": "two numbers",
@@ -120,7 +120,7 @@
         }
     },
     "warmup-loops": {
-        "title": "Warmup loops",
+        "title": "Loops",
         "exercises": {
             "allEvens": {
                 "given": "an array of integers",

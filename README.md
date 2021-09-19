@@ -104,7 +104,7 @@ Here are the current test modules.
 **Warmup**: As suggested, these are warmup exercises, to get you used to the testing interface. Do not 
 submit these for code review. 
 
-**Basic**:  One step above the warmup exercises, these emphasize looping, to get you
+**Mapping**:  One step above the warmup exercises, these emphasize looping, to get you
 used to modern JavaScript iteration
 with **map**, **filter**, and such, rather than **for** or **while**.
 
@@ -132,14 +132,14 @@ Write clean code. Unless required by the exercise, solutions should not
 You can put your solutions in separate files, such as
 
 * **solutions/warmup.js**
-* **solutions/basic.js**
+* **solutions/mapping.js**
 * **solutions/match.js**
 
 In **solutions.js** put
 
 ```
 export * from '/solutions/warmup.js';
-export * from '/solutions/basic.js';
+export * from '/solutions/mapping.js';
 export * from '/solutions/match.js';
 ```
 
