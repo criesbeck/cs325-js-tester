@@ -1,6 +1,8 @@
 import { resultText, testSolutions } from "./testing.js";
 import * as solutions from './solutions.js';
 
+const modules  = ['warmup', 'basic', 'match', 'ddr'];
+
 const app = Vue.createApp({
   data() {
     return { 
@@ -10,7 +12,7 @@ const app = Vue.createApp({
     }
   },
   mounted() {
-    fetchJsonList(['warmup', 'basic', 'match', 'ddr'])
+    fetchJsonList(modules)
     .then(json => {
       this.exercises = json;
       this.modules = testSolutions(json, solutions);

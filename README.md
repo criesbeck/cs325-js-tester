@@ -27,17 +27,19 @@ git clone https://github.com/criesbeck/cs325-js-tester.git
 
 ## Running in VS Code
 
-In VS Code, use **File | Open** to open the entire downloaded directory (not a specific file).
+Run this web app in a local server and open **index.html**.
 
-Start [Live Server.](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to serve
-**index.html**.
+If you have **VS Code** and **Live Server**, 
 
-The exercise tester page should open on http://localhost:5500 or whatever port your local server
-is using. It should look like [this](https://criesbeck.github.io/cs325-js-tester/).
+* In VS Code, use **File | Open** to open the entire downloaded directory (not a specific file)
+* Start **Live Server** to serve **index.html**.
+* The exercise tester page should open on http://localhost:5500.
+
+The local test page hould look like [this](https://criesbeck.github.io/cs325-js-tester/).
 
 ## The interface
 
-The tester page displays a list of JavaScript exercise modules and which ones you've completed.
+The tester page displays a list of JavaScript exercise modules.
 The color of each module indicates its status:
 
 * <span style="color:gray">gray</span> means none of the exercises in the module have been started
@@ -144,14 +146,15 @@ export * from '/solutions/match.js';
 ## Resources
 
 [Hello, JavaScript!](https://courses.cs.northwestern.edu/394/guides/intro-js.php) is
-the primary resource for these exercises. It covers just the parts you need to know for 
-the exercises and to get started with React programming.
+the primary resource for these exercises. It emphasizes
+[the modern parts of JavaScript](https://developer.mozilla.org/en-US/docs/MDN/Guidelines/Code_guidelines/JavaScript#use_modern_js_features).
+It deliberately ignores and does not recommend elements such as **var**, **function**, **for**, and so on.
 
 For a longer introduction to JavaScript, see  [The Modern JavaScript Tutorial](https://javascript.info/). Note that to be complete it covers many features in JavaScript that are no longer 
 recommended practice. 
 
 A good reference for specific details about various JavaScript functions and methods is  
-[the Mozilla Developer  site](https://developer.mozilla.org/en-US/).
+[the Mozilla Developer site](https://developer.mozilla.org/en-US/).
 
 
 ## Authors
