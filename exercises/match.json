@@ -297,7 +297,7 @@
     "title": "Match Regular Expressions",
     "exercises": {
       "match": {
-        "given": "{regexp: regular-expression, pats: [zero or more pattern variables]}, and an object",
+        "given": "a pattern of the form {regexp: regular-expression, pats: [zero or more pattern variables]}, and an object",
         "returns": "list of the binding lists for the pattern variables bound to the parts returned by the regular expression groups, if any",
         "tests": [
           {
