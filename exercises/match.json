@@ -361,5 +361,161 @@
         ]
       }
     }
+  },
+  "match-or": {
+    "title": "Match Or",
+    "exercises": {
+      "match": {
+        "given": "a pattern of the form {or: [pat1, pat2, ...]}, an object, and an optional list of binding lists",
+        "returns": "list of the binding lists that make any of the patterns list match the object, if any",
+        "note": "The list of bindings lists should default to [{}].",
+        "tests": [
+          {
+            "inputs": [ 
+                { "or": ["a", "b"] },
+                "a"
+              ],
+            "output": [ { } ]
+          },
+          {
+            "inputs": [ 
+                { "or": ["a", "b"] },
+                "b"
+              ],
+            "output": [ { } ]
+          },
+          {
+            "inputs": [ 
+                { "or": ["a", "b"] },
+                "c"
+              ],
+            "output": [ ]
+          },
+          {
+            "inputs": [ { "or": [] }, "a" ],
+            "output": [ ]
+          },
+          {
+            "inputs": [ { "or": ["?x", "?y"] }, "a" ],
+            "output": [ { "?x": "a" }, { "?y": "a" } ]
+          },
+          {
+            "inputs": [ { "or": ["?x", "?y"] }, "a", [{ "?x": "b" }] ],
+            "output": [ { "?x": "b", "?y": "a" } ]
+          }
+        ]
+      }
+    }
+  },
+  "match-and": {
+    "title": "Match And",
+    "exercises": {
+      "match": {
+        "given": "a pattern of the form {and: [pat1, pat2, ...]}, an object, and an optional list of binding lists",
+        "returns": "list of the binding lists that make all of the patterns match the object, if any",
+        "note": "The list of bindings lists should default to [{}].",
+        "tests": [
+          {
+            "inputs": [ 
+                { "and": ["a", "?x"] },
+                "a"
+              ],
+            "output": [ { "?x": "a" } ]
+          },
+          {
+            "inputs": [ 
+                { "and": ["a", "?x"] },
+                "b"
+              ],
+            "output": [ ]
+          },
+          {
+            "inputs": [ 
+                { "and": [] },
+                "a"
+              ],
+            "output": [ { } ]
+          },
+          {
+            "inputs": [ 
+                { "and": [ { "or": ["a", "b"] }, "?x"] },
+                "a"
+              ],
+            "output": [ { "?x": "a"} ]
+          },
+          {
+            "inputs": [ 
+                { "and": [ { "or": ["a", "b"] }, "?x"] },
+                "b"
+              ],
+            "output": [ { "?x": "b"} ]
+          },
+          {
+            "inputs": [ { "and": ["?x", "?y"] }, "a" ],
+            "output": [ { "?x": "a", "?y": "a" } ]
+          },
+          {
+            "inputs": [ { "and": ["?x", "?y"] }, "a", [{ "?y": "b" }] ],
+            "output": [ ]
+          }
+        ]
+      }
+    }
+  },
+  "match-not": {
+    "title": "Match Not",
+    "exercises": {
+      "match": {
+        "given": "a pattern of the form {not: pat}, an object, and an optional list of binding lists",
+        "returns": "list of the binding lists that make the pattern NOT match the object, if any",
+        "note": "The list of bindings lists should default to [{}].",
+        "tests": [
+          {
+            "inputs": [ { "not": "a" }, "a" ],
+            "output": []
+          },
+          {
+            "inputs": [ { "not": "a" }, "b" ],
+            "output": [ {} ]
+          },
+          {
+            "inputs": [ { "not": "?x" }, "a", [{ "?x": "a"}, {"?x": "b" }] ],
+            "output": [ { "?x": "b" } ]
+          }
+        ]
+      }
+    }
+  },
+  "match-some": {
+    "title": "Match Some",
+    "exercises": {
+      "match": {
+        "given": "a pattern of the form { some: pat}, an array, and an optional list of binding lists",
+        "returns": "list of the binding lists that make pat match some element of the array, if any",
+        "note": "The list of bindings lists should default to [{}].",
+        "tests": [
+          {
+            "inputs": [ { "some": 1 }, [1] ],
+            "output": [ {} ]
+          },
+          {
+            "inputs": [ { "some": 3 }, [1, 2, 3] ],
+            "output": [ {} ]
+          },
+          {
+            "inputs": [ { "some": 4 }, [1, 2, 3] ],
+            "output": [ ]
+          },
+          {
+            "inputs": [ { "some": "?x" } , [1, 2, 3] ],
+            "output": [ { "?x": 1 }, { "?x": 2 }, {"?x": 3 } ]
+          },
+          {
+            "inputs": [ { "some": { "and": [{ "or": [2, 4] }, "?x" ] } } , [1, 2, 3, 4] ],
+            "output": [ { "?x": 2 }, { "?x": 4 } ]
+          }
+        ]
+      }
+    }
   }
 }
