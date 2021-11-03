@@ -25,6 +25,8 @@ use the following terminal command to create a local copy:
 git clone https://github.com/criesbeck/cs325-js-tester.git
 ```
 
+The advantage of ``git clone`` is that you can get updates just be calling ``git pull`` in ``cs325-js-tester`` directory.
+
 ## Running in VS Code
 
 Run this web app in a local server and open **index.html**.
