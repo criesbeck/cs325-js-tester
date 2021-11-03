@@ -333,16 +333,23 @@
           {
             "inputs": [ 
                 { "regexp": "(.*): expects", "pats": ["?x"] },
-                "sum: expects a number, got <image>"
+                "sum: expects a number, got string"
               ],
             "output": [ { "?x": "sum" }  ]
           },
           {
             "inputs": [ 
                 { "regexp": "(.*): expects" },
-                "sum: expects a number, got <image>"
+                "sum: expects a number, got string"
               ],
             "output": [ { }  ]
+          },
+          {
+            "inputs": [ 
+                { "regexp": "(.*): expects" },
+                "no problems detected"
+              ],
+            "output": [ ]
           },
           {
             "inputs": [ 
