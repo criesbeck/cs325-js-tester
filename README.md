@@ -18,14 +18,25 @@ Recommended for editing and running the code:
 
 ## Installation
 
-Download this repository. Use the ![](./download-code.png) button to get a Zip archive or
-use the following terminal command to create a local copy:
+The tester is a web application that you run locally.
+Download it using a command shell like Terminal in MacOS
+or Git Bash on Windows. In a command shell, **cd** to the directory where you want
+to create a directory for your JavaScript solutions.
+
+ If you have Node installed, use
+[degit](https://www.npmjs.com/package/degit):
 
 ```
-git clone https://github.com/criesbeck/cs325-js-tester.git
+npx degit criesbeck/cs325-js-tester your-js-folder-name
 ```
 
-The advantage of ``git clone`` is that you can get updates just be calling ``git pull`` in ``cs325-js-tester`` directory.
+If you don't have and don't want to install Node, use **git clone**:
+
+```
+git clone https://github.com/criesbeck/cs325-js-tester.git your-js-folder-name
+```
+
+``npx degit`` is faster and downloads fewer files. 
 
 ## Running in VS Code
 
@@ -36,6 +47,10 @@ If you have **VS Code** and **Live Server**,
 * In VS Code, use **File | Open** to open the entire downloaded directory (not a specific file)
 * Start **Live Server** to serve **index.html**.
 * The exercise tester page should open on http://localhost:5500.
+
+If you don't have VS Code, consider installing it. It is a fine JavaScript editor. But feel
+free to use any editor that properly indents JavaScript code and any web server to test
+your solutions.
 
 The local test page hould look like [this](https://criesbeck.github.io/cs325-js-tester/).
 
@@ -143,6 +158,24 @@ In **solutions.js** put
 export * from '/solutions/warmup.js';
 export * from '/solutions/mapping.js';
 export * from '/solutions/match.js';
+```
+
+## Updating
+
+When the exercises or tests are updated, you can update the tester without losing
+your solution code. In a command shell, **cd** into the folder you created to
+hold the tester.
+
+If you installed using **npx degit** then update with
+
+```
+npx degit criesbeck/cs325-js-tester
+```
+
+If you installed using **git clone** then update with
+
+```
+git pull
 ```
 
 ## Resources
