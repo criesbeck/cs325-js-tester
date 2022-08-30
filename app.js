@@ -29,9 +29,6 @@ const app = Vue.createApp({
     display(text) {
       return resultText(text);
     },
-    noteLinks (reading) {
-      return replaceLinks(reading.base, reading.notes);
-    },
     resultSuccess (result) {
       return result.success ? 'passed' : 'failed';
     }

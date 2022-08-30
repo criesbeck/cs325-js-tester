@@ -40,9 +40,8 @@ git clone https://github.com/criesbeck/cs325-js-tester.git your-js-folder-name
 
 ## Running in VS Code
 
-Run this web app in a local server and open **index.html**.
-
-If you have **VS Code** and **Live Server**, 
+Run this web app in a local server and open **index.html**. Any web server will
+do, but a simple approach is to run **Live Server** inside **VS Code**:
 
 * In VS Code, use **File | Open** to open the entire downloaded directory (not a specific file)
 * Start **Live Server** to serve **index.html**.
@@ -94,15 +93,18 @@ because all of the tests fail.
 
 ## Fixing a solution
 
-All exercise solutions are in the file **solutions.js**. Open that file. 
-
-Out of the box, there is one function exported. 
+The tester loads the file **solutions.js**. Open that file. Out of the box, 
+it contains
 
 ```
+// export * from './solutions/warmup.js';
+// export * from './solutions/mapping.js';
+// export * from './solutions/match.js';
+
 export const sumOfSquares = (x, y) => x + y;
 ```
-
-Edit that definition to be
+This definition of **sumOfSquares()** is incorrect. Delete it, uncomment
+the first line, and put the correct solution in the file **solutions/warmup.js**.
 
 ```
 export const sumOfSquares = (x, y) => x * x + y * y;
@@ -116,49 +118,39 @@ but it does have exercises with no solutions.
 
 ## Overview of the modules
 
-Here are the current test modules.
-
-**Warmup**: As suggested, these are warmup exercises, to get you used to the testing interface. Do not 
-submit these for code review. 
-
-**Mapping**:  One step above the warmup exercises, these emphasize looping, to get you
-used to modern JavaScript iteration
-with **map**, **filter**, and such, rather than **for** or **while**.
+**warmup-json**: This includes tests for **conditionals** using
+[the ternary conditional operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
+and **looping** using
+[array iteration methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
+ 
+**mapping.json**: More exercises doing loops using JavaScript iteration methods,
+rather than **for** and **while**.
 
 **Match**: A sequence of increasingly challenging modules 
 that incrementally develops a recursive object pattern matcher.
 
-**DDR**: Exercises on unification and deductive retrieval.
+As you write code for these modules, uncomment the appropriate export line of **solutions.js**
+and put your code in the corresponding file in the **solutions** subdirectory.
 
-## Exercise guidelines
+> Code you put into the **solutions** subdirectory will not be overwritten
+if you do ``git pull`` to update the testing code.
 
-Solutions are functions. They must be defined in **solutions.js** and
-exported for the tester to see them.
+## Exercise code guidelines
 
-Feel free to define helper functions, but don't export them.
+Solutions are functions. They must be
+[exported](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export)
+for the tester to see them.
+
+Feel free to define helper functions. Don't export those.
 
 Use [modern JavaScript features](https://developer.mozilla.org/en-US/docs/MDN/Guidelines/Code_guidelines/JavaScript#use_modern_js_features).
 
-Write clean code. Unless required by the exercise, solutions should not
+Unless required by the exercise, solutions should not
 
 * destructively modify input objects
 * print anything
 
-## Modularization
-
-You can put your solutions in separate files, such as
-
-* **solutions/warmup.js**
-* **solutions/mapping.js**
-* **solutions/match.js**
-
-In **solutions.js** put
-
-```
-export * from '/solutions/warmup.js';
-export * from '/solutions/mapping.js';
-export * from '/solutions/match.js';
-```
+Code should be readable. That means indented properly, with lines no longeer than 70 characters.
 
 ## Updating
 
@@ -177,6 +169,9 @@ If you installed using **git clone** then update with
 ```
 git pull
 ```
+
+You will need to 
+update the export lines that you've changed in the file **solutions.js**.
 
 ## Resources
 

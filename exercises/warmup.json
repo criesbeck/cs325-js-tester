@@ -95,13 +95,8 @@
             },
             "isLeapYear": {
                 "given": "an integer",
-                "returns": "true if the integer is a leap year</a>",
-                "links": [
-                    {
-                        "text": "Leap year rules",
-                        "href": "http://www.wwu.edu/skywise/leapyear.html"
-                    }
-                ],
+                "returns": "true if the integer is a leap year",
+                "links": "<a href='https://en.wikipedia.org/wiki/Leap_year#Algorithm' target='_blank'>Leap years</a>",
                 "tests": [
                     {
                         "inputs": [ 2004 ],

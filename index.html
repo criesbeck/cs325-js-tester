@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>CS325 JavaScript Exercises</title>
+  <title>CS325 JavaScript Exercise Tester</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
       rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
@@ -24,7 +24,7 @@
 <body>
   <div id="app" class="container">
     <header>
-      <h1>CS325 JavaScript Exercises</h>
+      <h1>CS325 JavaScript Exercise Tester</h>
     </header>
     <p>For information about this tool, see <a href="https://github.com/criesbeck/cs325-js-tester/blob/main/README.md" target="_blank">the Readme</a>.</p>
 
@@ -44,9 +44,11 @@
                 <div :id="result.exercise" class="collapse">
                   <div class="card-body accordion-body">
                     <p class="card-text">
-                      Define a function <strong>{{result.exercise}}</strong>. 
-                      It should take {{result.data.given}}.
-                      It should return {{result.data.returns}}. {{result.data.note}}
+                      The function <strong>{{result.exercise}}</strong>
+                      should take {{result.data.given}}.
+                      It should return {{result.data.returns}}.
+                      <span v-if="result.data.note">Note: {{result.data.note}}</span>
+                      <span v-html="result.data.links"></span>
                     </p>
                     <table class="table table-bordered">
                       <thead>
