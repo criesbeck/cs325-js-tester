@@ -113,6 +113,14 @@
                     {
                         "inputs": [ 1900],
                         "output": false
+                    },
+                    {
+                        "inputs": [ 2400 ],
+                        "output": true
+                    },
+                    {
+                        "inputs": [ 2200 ],
+                        "output": false
                     }
                 ]
             }
