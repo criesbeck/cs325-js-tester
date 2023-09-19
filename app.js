@@ -15,14 +15,14 @@ const app = Vue.createApp({
     fetchJsonList(modules)
     .then(json => {
       this.exercises = json;
-      this.modules = testSolutions(json, solutions);
+      this.run();
     })
     .catch(error => alert(error))
   },
   updated() {
     if (!this.tested) {
       this.tested = true;
-      this.modules = testSolutions(this.exercises, solutions);
+      this.run();
     }
   },
   methods: {
@@ -31,6 +31,9 @@ const app = Vue.createApp({
     },
     resultSuccess (result) {
       return result.success ? 'passed' : 'failed';
+    },
+    run() {
+      this.modules = testSolutions(this.exercises, solutions);
     }
   }
 });

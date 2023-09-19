@@ -32,6 +32,7 @@
             "getRepeats": {
                 "arguments": "an array",
                 "returns": "an array of the first occurrence of each repeating item",
+                "note": "Do one version with just filter(), another using a Set.",
                 "tests": [
                     {
                         "inputs": [
