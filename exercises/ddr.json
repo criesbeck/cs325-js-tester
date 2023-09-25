@@ -3,7 +3,7 @@
     "title": "DDR Unify",
     "exercises": {
       "unify": {
-          "arguments": "two patterns",
+          "given": "two patterns",
           "returns": "list of binding lists",
           "links": "<a href='http://localhost:8080/readings/deductive-retrieval.php#unification' target='_blank'>unification</a>",
           "tests": [

@@ -3,7 +3,7 @@
         "title": "Mapping",
         "exercises": {
             "subArray": {
-                "arguments": "two arrays, arr and indices, where indices is an array of integers",
+                "given": "two arrays, arr and indices, where indices is an array of integers",
                 "returns": "the array of elements in arr at the given indices",
                 "tests": [
                     {
@@ -30,7 +30,7 @@
                 ]
             },
             "getRepeats": {
-                "arguments": "an array",
+                "given": "an array",
                 "returns": "an array of the first occurrence of each repeating item",
                 "note": "Do one version with just filter(), another using a Set.",
                 "tests": [
@@ -61,7 +61,7 @@
                 ]
             },
             "over21": {
-                "arguments": "an array of \"person\" objects, each with a name and age keys",
+                "given": "an array of \"person\" objects, each with a name and age keys",
                 "returns": "an array of the people 21 or older",
                 "tests": [
                     {
@@ -110,7 +110,7 @@
                 ]
             },
             "makeHtmlList": {
-                "arguments": "an array of strings",
+                "given": "an array of strings",
                 "returns": "a string with an HTML list of those strings",
                 "tests": [
                     {
